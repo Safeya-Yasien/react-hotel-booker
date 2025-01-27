@@ -47,7 +47,11 @@ const Header = ({ type }: { type: string }) => {
 
   return (
     <div className="header bg-[#003580] text-white flex justify-center relative">
-      <div className="headerContainer container mx-auto w-full max-w-5xl mt-5 mb-[100px]">
+      <div
+        className={`${
+          type === "list" ? "mb-0" : ""
+        } headerContainer container mx-auto w-full max-w-5xl mt-5 mb-[100px]`}
+      >
         <div className="headerList flex items-center gap-10 mb-[50px] ">
           <div className="headerListItem active flex items-center gap-[10px]">
             <FontAwesomeIcon icon={faBed} className="text-white" />
