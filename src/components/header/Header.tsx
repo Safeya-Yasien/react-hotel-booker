@@ -17,9 +17,7 @@ import { useNavigate } from "react-router";
 
 const Header = ({ type }: { type: string }) => {
   const [openDate, setOpenDate] = useState(false);
-  const [date, setDate] = useState<
-    { startDate: Date; endDate: Date; key: string }[]
-  >([
+  const [date, setDate] = useState([
     {
       startDate: new Date(),
       endDate: new Date(),
@@ -126,7 +124,15 @@ const Header = ({ type }: { type: string }) => {
                 {openDate && (
                   <DateRange
                     editableDateInputs={true}
-                    onChange={(item) => setDate([item.selection])}
+                    onChange={(item) =>
+                      setDate([
+                        {
+                          startDate: item.selection.startDate || new Date(),
+                          endDate: item.selection.endDate || new Date(),
+                          key: "selection",
+                        },
+                      ])
+                    }
                     moveRangeOnFirstSelection={false}
                     ranges={date}
                     className="date absolute top-[50px] z-30"
