@@ -58,28 +58,24 @@ const Header = ({ type }: { type: string }) => {
           type === "list" ? "mb-0" : ""
         } headerContainer container mx-auto w-full max-w-5xl mt-5 mb-[100px]`}
       >
-        <div className="headerList flex items-center gap-10 mb-[50px] ">
-          <div className="headerListItem active flex items-center gap-[10px]">
-            <FontAwesomeIcon icon={faBed} className="text-white" />
-            <span>Stays</span>
-          </div>
-          <div className="headerListItem flex items-center gap-[10px]">
-            <FontAwesomeIcon icon={faPlane} className="text-white" />
-            <span>Flights</span>
-          </div>
-          <div className="headerListItem flex items-center gap-[10px]">
-            <FontAwesomeIcon icon={faCar} className="text-white" />
-            <span>Car rentals</span>
-          </div>
-          <div className="headerListItem flex items-center gap-[10px]">
-            <FontAwesomeIcon icon={faBed} className="text-white" />
-            <span>Attractions</span>
-          </div>
-          <div className="headerListItem flex items-center gap-[10px]">
-            <FontAwesomeIcon icon={faTaxi} className="text-white" />
-            <span>Airport taxis</span>
-          </div>
+        <div className="flex items-center gap-10 mb-[50px]">
+          {[
+            { icon: faBed, label: "Stays" },
+            { icon: faPlane, label: "Flights" },
+            { icon: faCar, label: "Car rentals" },
+            { icon: faBed, label: "Attractions" },
+            { icon: faTaxi, label: "Airport taxis" },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-[10px] cursor-pointer"
+            >
+              <FontAwesomeIcon icon={item.icon} className="text-white" />
+              <span>{item.label}</span>
+            </div>
+          ))}
         </div>
+
         {type !== "list" && (
           <div>
             <h1 className="headerTitle text-white">
