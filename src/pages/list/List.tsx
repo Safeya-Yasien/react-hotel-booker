@@ -4,6 +4,7 @@ import Navbar from "../../components/navbar/Navbar";
 import { useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
+import SearchItem from "../../components/searchItem/SearchItem";
 
 const List = () => {
   const location = useLocation();
@@ -100,7 +101,15 @@ const List = () => {
           </div>
 
           <div className="flex-3">
-            {/* The list of search results can go here */}
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />{" "}
           </div>
         </div>
       </div>
