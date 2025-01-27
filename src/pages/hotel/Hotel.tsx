@@ -50,7 +50,7 @@ const Hotel = () => {
       newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1;
     }
 
-    setSlideNumber(newSlideNumber)
+    setSlideNumber(newSlideNumber);
   };
 
   return (
@@ -59,7 +59,7 @@ const Hotel = () => {
       <Header type="list" />
       <div className="hotelContainer flex flex-col items-center mt-5">
         {open && (
-          <div className="slider sticky top-0 left-0 w-screen h-screen bg-black opacity-60 z-50 flex items-center">
+          <div className="slider sticky top-0 left-0 w-[100vw] h-[100vh]  bg-black/60 z-[999] flex items-center">
             <FontAwesomeIcon
               icon={faCircleXmark}
               className="close absolute top-5 right-5 text-[30px] text-gray-400 cursor-pointer"
@@ -71,17 +71,19 @@ const Hotel = () => {
               onClick={() => handleMove("l")}
             />
             <div className="sliderWrapper w-full h-full flex items-center justify-center">
-              <img src={photos[slideNumber].src} alt="" className="sliderImg" />
+              <img src={photos[slideNumber].src} alt="" className="sliderImg w-[80%] h-[80vh]" />
             </div>
             <FontAwesomeIcon
               icon={faCircleArrowRight}
-              className="arrow"
+              className="arrow m-5 text-[50px] text-gray-400 cursor-pointer"
               onClick={() => handleMove("r")}
             />
           </div>
         )}
         <div className="hotelWrapper w-full max-w-5xl flex flex-col gap-[10px] relative">
-          <button className="bookNow absolute top-[10px] right-0 border-none py-[10px] px-[20px] bg-[#0071c2] text-white font-bold rounded-[5px] cursor-pointer">Reserve or Book Now!</button>
+          <button className="bookNow absolute top-[10px] right-0 border-none py-[10px] px-[20px] bg-[#0071c2] text-white font-bold rounded-[5px] cursor-pointer">
+            Reserve or Book Now!
+          </button>
           <h1 className="hotelTitle text-2xl">Tower Street Apartments</h1>
           <div className="hotelAddress text-xs flex items-center gap-[10px]">
             <FontAwesomeIcon icon={faLocationDot} />
@@ -106,7 +108,7 @@ const Hotel = () => {
             ))}
           </div>
           <div className="hotelDetails flex justify-between gap-5 mt-5">
-            <div className="hotelDetailsTexts ">
+            <div className="hotelDetailsTexts flex-[3]">
               <h1 className="hotelTitle">Stay in the heart of City</h1>
               <p className="hotelDesc text-sm mt-5">
                 Located a 5-minute walk from St. Florian's Gate in Krakow, Tower
@@ -123,15 +125,19 @@ const Hotel = () => {
               </p>
             </div>
             <div className="hotelDetailsPrice flex-1 bg-[#ebf3ff] p-5 flex flex-col gap-5">
-              <h1 className="text-lg text-[#555]">Perfect for a 9-night stay!</h1>
+              <h1 className="text-lg text-[#555]">
+                Perfect for a 9-night stay!
+              </h1>
               <span className="text-sm">
                 Located in the real heart of Krakow, this property has an
                 excellent location score of 9.8!
               </span>
-              <h2 className="font-light">
+              <h2 className="font-bold">
                 <b>$945</b> (9 nights)
               </h2>
-              <button className="border-none py-[10px] px-5 bg-[#0071c2] text-white font-bold cursor-pointer rounded-[5px]">Reserve or Book Now!</button>
+              <button className="border-none py-[10px] px-5 bg-[#0071c2] text-white font-bold cursor-pointer rounded-[5px]">
+                Reserve or Book Now!
+              </button>
             </div>
           </div>
         </div>
