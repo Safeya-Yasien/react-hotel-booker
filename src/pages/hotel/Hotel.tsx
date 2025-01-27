@@ -71,7 +71,11 @@ const Hotel = () => {
               onClick={() => handleMove("l")}
             />
             <div className="sliderWrapper w-full h-full flex items-center justify-center">
-              <img src={photos[slideNumber].src} alt="" className="sliderImg w-[80%] h-[80vh]" />
+              <img
+                src={photos[slideNumber].src}
+                alt=""
+                className="sliderImg w-[80%] h-[80vh]"
+              />
             </div>
             <FontAwesomeIcon
               icon={faCircleArrowRight}
