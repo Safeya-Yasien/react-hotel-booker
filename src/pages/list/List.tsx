@@ -20,7 +20,7 @@ const List = () => {
 
       <div className="flex justify-center mt-5">
         <div className="w-full max-w-screen-lg flex gap-5">
-          <div className="flex-1 bg-[#febb02] p-5 rounded-lg sticky top-2">
+          <div className="listSearch flex-1 bg-[#febb02] p-[10px] rounded-[10px] sticky top-[10px] h-max">
             <h1 className="text-xl text-[#555] mb-2">Search</h1>
             <div className="lsItem mb-4">
               <label className="text-xs">Destination</label>
