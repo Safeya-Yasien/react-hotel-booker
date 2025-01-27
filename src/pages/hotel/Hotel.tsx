@@ -36,12 +36,12 @@ const Hotel = () => {
     },
   ];
 
-  const handleOpen = (i) => {
+  const handleOpen = (i: number) => {
     setSlideNumber(i);
     setOpen(true);
   };
 
-  const handleMove = (direction) => {
+  const handleMove = (direction: "l" | "r") => {
     let newSlideNumber;
 
     if (direction === "l") {
